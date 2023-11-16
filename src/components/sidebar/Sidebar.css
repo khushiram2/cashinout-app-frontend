@@ -1,0 +1,45 @@
+.sidebar-container{
+ height: calc(100vh - 64px);
+background: rgb(7, 22, 66);
+color: antiquewhite;
+}
+
+.list-container{
+width: 300px;
+padding:20px 10px   ;
+}
+.list{
+text-decoration: none;
+list-style: none;
+}
+.list-items{
+transition: all 4000 smooth ;
+}
+.list-items>div{
+width: 200px;
+height: 3rem;
+text-align: center;
+border: 1px solid;
+margin-bottom: 10px;
+border-radius: 10px;
+padding: 10px 20px 10px 10px;
+}
+.sub-list-items{
+    list-style: none;
+
+}
+
+.list-items>div:hover{
+    background: rgb(33, 70, 182);
+}
+
+
+.hidden{
+    display: none;
+}
+.block{
+    display: block;
+    width: 130px !important;
+    margin-left: 4.5rem;
+}
+

@@ -1,0 +1,6 @@
+.admin-main{
+    background:  rgb(7, 22, 66);
+    width: calc(100% - 300px);
+   border-left: 2px solid white;
+   color: aliceblue;
+}

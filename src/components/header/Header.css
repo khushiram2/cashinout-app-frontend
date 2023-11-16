@@ -1,0 +1,11 @@
+.navbar{
+    height: 10vh;
+    background-color: rgb(20, 20, 77);
+    color: wheat;
+}
+
+a {
+    text-decoration: none;  
+    color: wheat !important;
+}
+

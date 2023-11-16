@@ -1,0 +1,41 @@
+.container{
+    height: calc(100vh - 100px);
+    background-color: rgb(0, 0, 54);
+    width: 100vb;
+    border-radius: 20px;
+    position: relative;
+}
+form{
+    color: wheat;
+    position: absolute;
+    transform: translateX(40%);
+    top: 30px; 
+}
+.form-control{
+    width: 400px;
+    
+}
+form>div{
+    margin: 10px 0;
+}
+button[type=submit]{
+    width: 400px;
+}
+/* login css */
+.login-container{
+    height: 50vh;
+    position: absolute;
+    transform: translate(40%,30%);
+
+}
+.check-box-group>.form-check{
+    margin: 20px;
+}
+.check-box-group>.form-check>input{
+    margin-right: 20px;
+}
+.login-container>form>button[type=submit]{
+    position: absolute;
+    bottom: -60px;
+    width: 400px;
+}
