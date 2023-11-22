@@ -9,16 +9,26 @@
     background-color: #fff;
   }
   
-  input {
-    width: 80%;
-    padding: 10px;
+  .display {
+    width: 100%;
+    padding: 20px;
     margin-bottom: 10px;
     font-size: 1.5rem;
+    background-color: rgb(225, 239, 239);
+    text-align: end;
+    display: flex; 
+    flex-direction: column; 
+    word-wrap: break-word;
+    max-height: 200px !important;
+    overflow-y: auto;
+
   }
-  
+  span{
+  font-size: 18px;
+  }  
   .buttons {
     display: grid;
-    grid-template-rows:repeat(4 , 2fr) ;
+    grid-template-rows:repeat(5 , 1fr) ;
     gap: 10px;
   }
   
@@ -37,9 +47,22 @@
     background-color: #ddd;
   }
   
-  .row {
+  .row-of-buttons {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
   }
+
+  
+  .display::-webkit-scrollbar {
+    width: 12px; 
+  }
+  
+  .display::-webkit-scrollbar-thumb {
+    background-color: #666; 
+    border-radius: 10px; 
+  }
+  
+  .display::-webkit-scrollbar-track {
+    background-color:  rgb(225, 239, 239);
+  }
+  
   
