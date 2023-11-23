@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import { Button, Container, Form } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Button, Container, Form} from 'react-bootstrap'
 import "./Register.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import useApi from '../../Customhooks.js/useApiHook'
 export const Register = () => {
 const [formData, setformData] = useState({
     name:"",
@@ -11,7 +12,8 @@ const [formData, setformData] = useState({
     confirmPassword:"",
     adminStatus:false
 })
-
+const navigate=useNavigate()
+const {createData,data,loading}=useApi()
 function handleChange(event) {
     const {name,value}=event.target
     setformData({
@@ -21,11 +23,23 @@ function handleChange(event) {
     })
 }
 
-function handleSubmit(e) {
+async function handleSubmit(e) {
         e.preventDefault()
-
-    console.log(formData)
+     await createData("/auth/register",{userData:formData})
+    
 }
+
+useEffect(()=>{
+    if(data!==null){
+        if(data.status){            
+            alert("user logged in sucessfully")
+            navigate(`/${data.data.id}/dashboard`)
+        }else{
+            alert(data.message)
+        }
+    }
+},[data,loading,navigate])
+
 
   return (
     <Container>

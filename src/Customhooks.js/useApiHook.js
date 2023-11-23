@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-const BASE_URL = process.env.REACT_APP_API; // Replace with your actual base URL
+const BASE_URL = "http://localhost:5900";
 
 const useApi = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -15,11 +15,11 @@ const Token=window.localStorage.getItem("token")
 
   api.interceptors.request.use(
     (config) => {
-        if(Token){
+        if((config.url!=="/auth/register"||config.url!=="/auth/login") &&  Token){
             config.headers.Authorization=Token
+            return config
         }
-        return config;
-        
+        return config;   
     },
     (error) => {
       return Promise.reject(error);
@@ -32,7 +32,7 @@ const Token=window.localStorage.getItem("token")
 
     try {
       const response = await api.request({
-        url: `/${endpoint}`,
+        url: `${endpoint}`,
         method,
         data: body,
       });

@@ -2,19 +2,22 @@ import React from 'react'
 import { Button, Container, Form } from 'react-bootstrap'
 import "./Register.css"
 import { Link } from 'react-router-dom'
+import useApi from '../../Customhooks.js/useApiHook'
 export const Login = () => {
 const [formData, setformData] = React.useState({
     email:"",
     password:""
 })
+const loginIntance=useApi()
 
 function handleChange(params) {
     setformData({
         [params.target.name]:params.target.value
     })
 }
-function handleSubmit() {
-    console.log(formData)
+async function handleSubmit() {
+    const response = await loginIntance.createData("/auth/login",formData)
+    console.log(response.data)
 }
 
     
