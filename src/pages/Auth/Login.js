@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Container, Form } from 'react-bootstrap'
 import "./Register.css"
+import { Link } from 'react-router-dom'
 export const Login = () => {
 const [formData, setformData] = React.useState({
     email:"",
@@ -31,6 +32,9 @@ function handleSubmit() {
         <Button type='submit'>Login </Button>
 
     </Form>
+    <div className='d-flex' >
+    <p>already have an accout? </p> &nbsp; <Link to="/register"  >Login </Link> 
+    </div>
     </Container>
   )
 }
